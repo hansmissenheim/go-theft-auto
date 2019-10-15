@@ -2,6 +2,7 @@ package main
 
 import (
 	"image"
+	"time"
 
 	"github.com/kbinani/screenshot"
 	"gocv.io/x/gocv"
@@ -15,5 +16,10 @@ func main() {
 		img, _ := gocv.ImageToMatRGB(screen)
 		window.IMShow(img)
 		window.WaitKey(1)
+
+		time.Sleep(5 * time.Second)
+		pressKey(w)
+		time.Sleep(5 * time.Second)
+		releaseKey(w)
 	}
 }
