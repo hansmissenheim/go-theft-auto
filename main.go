@@ -11,9 +11,11 @@ func main() {
 	window := gocv.NewWindow("Hello")
 
 	for {
-		screen, _ := screenshot.CaptureRect(image.Rect(566, -1380, 1366, -780))
+		screen, _ := screenshot.CaptureRect(
+			image.Rect(screenRes[0], screenRes[1], screenRes[2], screenRes[3]),
+		)
 		img, _ := gocv.ImageToMatRGB(screen)
-		window.IMShow(process(regionOfInterest(img, vertices)))
+		window.IMShow(process(img))
 		window.WaitKey(1)
 	}
 }
