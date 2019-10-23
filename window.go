@@ -11,7 +11,7 @@ import (
 
 var (
 	monitor   = 0
-	gameRes   = []int{1280, 720}
+	gameRes   = []int{800, 600}
 	screenRes = []int{0, 0, 0, 0}
 )
 
